@@ -4,7 +4,7 @@ sequence = input("Enter the DNA Sequence: ")
 
 if len(sequence) < 1:
     sequence = "ATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGC   C"
-    print(f"Since you didn't choose any DNA sequence, you will be use the default sequence: {sequence}")
+    print(f"Since you didn't choose any DNA sequence, you will be using the default sequence: {sequence}")
 
 sequence = sequence.strip()
 sequence = sequence.replace(" ", "")
