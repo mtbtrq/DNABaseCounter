@@ -1,15 +1,15 @@
 import sys
+from matplotlib import pyplot as plt
 
 sequence = input("Enter the DNA Sequence: ")
 
 if len(sequence) < 1:
     sequence = "ATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGCATGC   C"
-    print(f"Since you didn't choose any DNA sequence, you will be using the default sequence: {sequence}")
+    print(f"Since you didn't choose any DNA sequence, you will be using the default sequence: '{sequence}'")
 
 sequence = sequence.strip()
 sequence = sequence.replace(" ", "")
 sequence = sequence.upper()
-sequence = "".join(sequence)
 
 invalidLetters = ["B", "D", "E", "F", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V", "W", "X", "Y", "Z"]
 
@@ -30,3 +30,10 @@ print(f"There are {baseDict['A']} adenine.")
 print(f"There are {baseDict['T']} thymine.")
 print(f"There are {baseDict['G']} guanine.")
 print(f"There are {baseDict['C']} cytosine.")
+
+plt.plot(baseDict.keys(), baseDict.values())
+plt.xlabel("Base")
+plt.ylabel("Count")
+
+plt.savefig('figure.png')
+print("Saved Image!")
